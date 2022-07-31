@@ -8,7 +8,9 @@ OpenCV版本 4.6.0
 每一個套件的安裝大致可分位以下三步驟:  
 1. 切換管理員 sudo -i  
 2. apt list 套件名稱，並按兩下Tab查看所有可能的套件  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install00.png)
 3. apt list 套件名稱，查看指定套件細節說明(例如:相依性套件、可能衝突的版本...etc)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install01.png)
 4. apt install 套件名稱
 
 過程中需要安裝的套件名稱如下(安裝不分先後順序):
@@ -45,6 +47,9 @@ OpenCV版本 4.6.0
 `apt install python3-dev`  
 `wget https://bootstrap.pypa.io/get-pip.py`  
 `python3 get-pip.py`  
+根據檔案階層式架構，自行安裝的套件都會在 `/usr/local/bin` 內  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install07.png)
+
 
 安裝完pip3之後，順便安裝numpy:  
 `pip3 install numpy`  
@@ -88,13 +93,13 @@ less ~/cmake.txt
 ```
 進入這個txt檔案內，按下\搜尋指定字串 OpenBLAS  
 
-6. 如果沒找到，那麼執行以下指令，編輯這份cmake檔  
+6. 如果發現是NOT FOUND，那麼執行以下指令，編輯這份cmake檔  
 ```
 nano ~/opencv/cmake/OpenCVFindOpenBLAS.cmake
 ```
 
 7. 在以下區塊加入紅色框框的字串  
-
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install02.png)  
 編輯好之後按下Ctrl+O + Enter 以及 Ctrl+X離開  
 
 8. 從build資料夾回到上一層，移除build資料夾並重新create一個
@@ -119,16 +124,19 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 10. 執行完成後，確認虛擬機核心個數，然後以核心數進行編譯(假設nproc=12，則使用make -j12)
 ```
 nproc
-make -j8
+time make -j8
 ```
+以下是執行完成的畫面  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install05.png)  
 
 11. 編譯結束後，以管理員身分執行make install，將程式庫複製到正確的路徑
 ```
 sudo make install
 ```
 
-12. 接著載入opencv程式庫，可以直接reboot，不想重開也可以執行以下指令
+12. 接著切換管理員並載入opencv程式庫，可以直接reboot，不想重開也可以執行以下指令
 ```
+sudo -i
 ldconfig
 ```
 
@@ -136,7 +144,8 @@ ldconfig
 ```
 ldconfig -p | grep -i 'opencv' | wc -l
 ```
-沒有意外的話會看到110個檔案
+沒有意外的話會看到110個檔案  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install03.png)  
 
 14. 接著使用Python互動式介面確認opencv安裝是否完成
 ```
@@ -146,4 +155,5 @@ python3
 >>> exit()
 ```
 
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install04.png)  
 如果匯入套件沒有出現錯誤，那麼安裝到這邊就算完成了!  
