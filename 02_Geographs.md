@@ -37,3 +37,6 @@
 - 使用cv2.putText(img , str , pt1 , font ,font_size , font_color , font_thickness , lineType )  
 - 須注意文字起算座標位置和圖像不同，putText起算位置在左下。  
 - 前8個變數分別為: 圖像變數、呈現文字(使用字串)、左下座標(使用tuple)、字型、字體大小、字體顏色、字體粗細、線條格式  
+
+上述執行後的結果如下圖:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv08.png) 
