@@ -43,3 +43,8 @@ cv2.imread(filename [, flag] )
 - 如果只想要關閉特定圖像，則需要使用 cv2.destroyWindow(name)來關閉，其中name引數為該視窗的標題!  
 - .py程式執行結束後會自動釋放window，但如果該程式是被其他程式所呼叫的(callback)則不會自動關閉視窗。所以最好還是手動加上去關閉的指令!  
 
+# 儲存圖像
+- 使用cv2.imwrite(filename , img [, params])來儲存圖片。  
+- 第一個參數為要儲存的檔名。  
+- 第二個參數為圖片變數。  
+- 第三個參數可傳遞key-value的對應關係(例如:cv.IMWRITE_JPEG_QUALITY)  
