@@ -14,8 +14,9 @@
 注意以上的m,n即為縮放比例，而p,q即為平移距離!  
 
 # 圖像旋轉
-
-
+- 
+注意二維平面上的點，使用以下旋轉矩陣進行transformation:  
+<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\begin{bmatrix}cos(\theta)&space;&&space;-sin(\theta)&space;\\sin(\theta)&space;&&space;cos(\theta)&space;\\\end{bmatrix}" title="\begin{bmatrix}cos(\theta) & -sin(\theta) \\sin(\theta) & cos(\theta) \\\end{bmatrix}" />  
 
 # 圖像翻轉
 
