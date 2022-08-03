@@ -26,7 +26,7 @@
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv34.png)  
 - 使用cv2.GaussianBlur(img , (k,k) , flag)  
 - 高斯模糊使用加權平均，越靠近中央像素的權重越高。   
-- flag參數代表。  
+- flag參數代表是否需要OpenCV依照window width/height計算標準差。  
 
 以下是執行結果(用hstack水平串接起來):  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv35.png)
