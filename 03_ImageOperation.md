@@ -42,17 +42,23 @@ OpenCV提供一個rotate()函數可以指定旋轉方向與角度，並且**不�
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv19.png)  
 語法是加入**cv.ROTATE_(角度)_(順/逆時鐘)** 引數。  
 
-
 以下是執行結果:  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv18.png)
 
 # 圖像翻轉
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv20.png)
+- 使用cv2.flip(img , rotate_flag)  
+- img為指定要處理的圖像、rotate_flag為水平或垂直翻轉，0為水平；1為垂直。  
 
-
+以下是執行結果:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv21.png)  
 
 # 圖像擷取
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv22.png)  
+- 使用array的索引方式對圖像做擷取。  
 
-
+以下是執行結果:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv23.png)  
 
 # 圖像位元運算
 
