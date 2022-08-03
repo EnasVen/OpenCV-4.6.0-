@@ -33,6 +33,19 @@
 旋轉後的圖片如下:  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv12.png)
 
+接著我們demo一下將原圖旋轉90和180度的圖:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv15.png)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv16.png)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv17.png)  
+
+OpenCV提供一個rotate()函數可以指定旋轉方向與角度，並且**不會出現因旋轉產生的黑底**!  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv19.png)  
+語法是加入**cv.ROTATE_(角度)_(順/逆時鐘)** 引數。  
+
+
+以下是執行結果:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv18.png)
+
 # 圖像翻轉
 
 
