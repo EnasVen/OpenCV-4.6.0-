@@ -10,6 +10,11 @@
 - 平均模糊使用window中央像素周圍的所有像素平均。   
 - 很顯然，當window越大，圖像處理過後會越模糊。  
 
+平均模糊其實就是用以下的transformation:  
+<img src="https://latex.codecogs.com/svg.image?\frac{1}{K_{weight}}\frac{1}{K_{height}}\begin{bmatrix}1&space;&&space;1&space;&&space;&space;1\\1&space;&&space;1&space;&&space;&space;1\\1&space;&&space;1&space;&&space;&space;1\\\end{bmatrix}" title="\frac{1}{K_{weight}}\frac{1}{K_{height}}\begin{bmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\\\end{bmatrix}" /> 
+K_weight 和 K_height是window的寬和高
+
+
 以下是執行結果(用hstack水平串接起來):  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv31.png)
 
@@ -24,9 +29,9 @@
 
 ## 高斯模糊(Gaussian Blur)
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv34.png)  
-- 使用cv2.GaussianBlur(img , (k,k) , flag)  
+- 使用cv2.GaussianBlur(img , (k,k) , SigmaX)  
 - 高斯模糊使用加權平均，越靠近中央像素的權重越高。   
-- flag參數代表是否需要OpenCV依照window width/height計算標準差。  
+- SigmaX參數設定為0代表OpenCV將依照window width/height計算標準差，否則會依bivariate normal各自計算margin X與Y的標準差。  
 
 以下是執行結果(用hstack水平串接起來):  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv35.png)
