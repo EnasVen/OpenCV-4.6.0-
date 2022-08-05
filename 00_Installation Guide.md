@@ -8,9 +8,9 @@ OpenCV版本 4.6.0
 每一個套件的安裝大致可分位以下三步驟:  
 1. 切換管理員 sudo -i  
 2. apt list 套件名稱，並按兩下Tab查看所有可能的套件  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install00.png)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/opencv_install00.png)
 3. apt list 套件名稱，查看指定套件細節說明(例如:相依性套件、可能衝突的版本...etc)
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install01.png)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/opencv_install01.png)
 4. apt install 套件名稱
 
 過程中需要安裝的套件名稱如下(安裝不分先後順序):
@@ -48,7 +48,7 @@ OpenCV版本 4.6.0
 `wget https://bootstrap.pypa.io/get-pip.py`  
 `python3 get-pip.py`  
 根據檔案階層式架構，自行安裝的套件都會在 `/usr/local/bin` 內  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install07.png)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/opencv_install07.png)
 
 
 安裝完pip3之後，順便安裝numpy:  
@@ -99,7 +99,7 @@ nano ~/opencv/cmake/OpenCVFindOpenBLAS.cmake
 ```
 
 7. 在以下區塊加入紅色框框的字串  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install02.png)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/opencv_install02.png)  
 編輯好之後按下Ctrl+O + Enter 以及 Ctrl+X離開  
 
 8. 從build資料夾回到上一層，移除build資料夾並重新create一個
@@ -127,7 +127,7 @@ nproc
 time make -j8
 ```
 以下是執行完成的畫面  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install05.png)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/opencv_install05.png)  
 
 11. 編譯結束後，以管理員身分執行make install，將程式庫複製到正確的路徑
 ```
@@ -145,7 +145,7 @@ ldconfig
 ldconfig -p | grep -i 'opencv' | wc -l
 ```
 沒有意外的話會看到110個檔案  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install03.png)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/opencv_install03.png)  
 
 14. 接著使用Python互動式介面確認opencv安裝是否完成
 ```
@@ -155,5 +155,5 @@ python3
 >>> exit()
 ```
 
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/opencv_install04.png)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/opencv_install04.png)  
 如果匯入套件沒有出現錯誤，那麼安裝到這邊就算完成了!  
