@@ -11,7 +11,7 @@
 - 很顯然，當window越大，圖像處理過後會越模糊。  
 
 平均模糊其實就是用以下的transformation:  
-<img src="https://latex.codecogs.com/svg.image?\frac{1}{K_{weight}}\frac{1}{K_{height}}\begin{bmatrix}1&space;&&space;1&space;&&space;&space;1\\1&space;&&space;1&space;&&space;&space;1\\1&space;&&space;1&space;&&space;&space;1\\\end{bmatrix}" title="\frac{1}{K_{weight}}\frac{1}{K_{height}}\begin{bmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\\\end{bmatrix}" /> 
+<img src="https://latex.codecogs.com/svg.image?\frac{1}{K_{weight}}\frac{1}{K_{height}}\begin{bmatrix}1&space;&&space;1&space;&&space;&space;1\\1&space;&&space;1&space;&&space;&space;1\\1&space;&&space;1&space;&&space;&space;1\\\end{bmatrix}" title="\frac{1}{K_{weight}}\frac{1}{K_{height}}\begin{bmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\\\end{bmatrix}" />  
 K_weight 和 K_height是window的寬和高
 
 
