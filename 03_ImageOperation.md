@@ -23,15 +23,15 @@
 - 前三個變數分別為: 原圖的中心點座標、旋轉角度以及縮放比例。  
 
 根據官方API文件，我們使用圖片的(cols-1)/2 , (rows-1)/2來求取圖片中心座標。
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv14.png)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv14.png)  
 求得的圖片中心和原圖shape如下:  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv13.png)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv13.png)
 
 注意二維平面上的點，使用以下旋轉矩陣進行transformation:  
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\begin{bmatrix}cos(\theta)&space;&&space;-sin(\theta)&space;\\sin(\theta)&space;&&space;cos(\theta)&space;\\\end{bmatrix}" title="\begin{bmatrix}cos(\theta) & -sin(\theta) \\sin(\theta) & cos(\theta) \\\end{bmatrix}" />  
 
 旋轉後的圖片如下:  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv12.png)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv12.png)
 
 接著我們demo一下將原圖旋轉90和180度的圖:  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv15.png)  
@@ -39,7 +39,7 @@
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv17.png)  
 
 OpenCV提供一個rotate()函數可以指定旋轉方向與角度，並且**不會出現因旋轉產生的黑底**!  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv19.png)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv19.png)  
 語法是加入**cv.ROTATE_(角度)_(順/逆時鐘)** 引數。  
 
 以下是執行結果:  
