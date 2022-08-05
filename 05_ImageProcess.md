@@ -104,6 +104,9 @@ K_weight 和 K_height是window的寬和高
 執行結果如下:
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv49.png)  
 
+Otsu’s threshold: 96.0  
+Otsu’s threshold after Gaussian blur: 97.0  
+
 ## Riddler-Calvard演算法
 
 
