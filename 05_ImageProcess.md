@@ -108,7 +108,14 @@ Otsu’s threshold: 96.0
 Otsu’s threshold after Gaussian blur: 97.0  
 
 ## Riddler-Calvard演算法
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv50.png)  
+- 類似otsu，但需要安裝mahotas套件才能跑。  
 
+執行結果如下:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv51.png)
+
+Otsu’s threshold: 165  
+Riddler-Calvard: 165.87138975004711  
 
 # 邊緣偵測
 
