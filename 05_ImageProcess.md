@@ -34,11 +34,34 @@ K_weight 和 K_height是window的寬和高
 - SigmaX參數設定為0代表OpenCV將依照window width/height計算標準差，否則會依bivariate normal各自計算margin X與Y的標準差。  
 
 以下是執行結果(用hstack水平串接起來):  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv35.png)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv35.png)  
 
 ## 雙邊濾波模糊(Bilateral Blur)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv36.png)   
+- 使用cv2.bilateralFilter(src, d, sigmaColor, sigmaSpace[, dst[, borderType]]	) ->	dst(這個dst就是過濾後的圖片變數)  
+- 根據官方API文件解釋: d為過濾使用的每個像素鄰域的直徑。如果它是非正數，則從sigmaSpace計算。  
+- 大過濾器（d > 5）會影響運算速度，因此建議實務中使用 d=5，對於需要大量噪聲過濾的離線應用，則建議使用d=9。  
+- 雙邊濾波器可以很好地減少不需要的噪聲，同時保持邊緣相當清晰。 但與大多數過濾器相比運算速度非常慢。  
+- 通常會將2個sigma值設置為相同。 如果設定很小（< 10），則濾鏡不會有太大的效果，如果很大（> 150），則產生的圖檔會很像卡通。  
+- 第一個sigma值將像素相鄰區域內的顏色混合，使區域內的圖片均一色，越大代表能混合的像素值越寬。  
+- 第二個sigma值影響相鄰的像素距離，越大代表越遠的"相似像素"會彼此影響。  
+
+以下為執行結果:
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv37.png)  
 
 # 銳化(Sharpening)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv38.png)  
+銳化的目的是將模糊的照片變得清晰。  
+- 使用cv2.filter2D(img , depth , kernel)
+- img為原圖，depth為設定處理結果的色彩深度(維持原圖色彩深度則設為-1)，kernel為銳化使用的2Darray。  
+
+以下為執行結果:  
+(原圖 vs 一般銳化sharp1)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv39.png)  
+(過度銳化sharp2 & sharp3)  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv40.png)  
+(邊緣加強sharp4)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv41.png)  
 
 # 臨界值(Thresholding)
 
