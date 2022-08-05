@@ -60,15 +60,43 @@ K_weight 和 K_height是window的寬和高
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv39.png)  
 (過度銳化sharp2 & sharp3)  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv40.png)  
-(邊緣加強sharp4)
+(邊緣加強sharp4)  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv41.png)  
 
-# 臨界值(Thresholding)
+# 臨界值(Thresholding) 
+臨界值就是對圖像進行二值化，像素值比閥值小就是0，反之則為255。  
+透過臨界值可以將圖像焦點放在特定物件或區域上。  
 
 ## 簡單臨界值(Simple Threshold)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv43.png) 
+- 透過人為設定閥值來達成二值化。  
+- 使用cv2.threshold(src, thresh, maxval, type[, dst]	) ->	retval, dst  
+- 根據官方API文件定義，thresh為自行定義的閥值，maxval為像素強度最大值，type為二值化的算法。  
+- type可使用的參數為以下:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv42.png)  
+
+使用簡單臨界值，則選 cv2.THRESH_BINARY
+執行結果如下:
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv44.png)  
+須注意cv2.THRESH_BINARY_INV代表將原本的threshold結果當作mask，也就是原圖黑白互換。  
+
 ## 自適應臨界值(Adaptive Threshold)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv45.png) 
+- 根據每個像素的相鄰區域找出最佳二值化閥值。  
+- 使用cv2.adaptiveThreshold(src, maxValue, adaptiveMethod, thresholdType, blockSize, C[, dst]	) ->	dst  
+-  maxValue為像素最大強度值，adaptiveMethod為使用的演算法，thresholdType為二值化的算法，blocksize為選取計算neighbo的範圍。  
+-  adaptiveMethod可使用的參數為以下:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv47.png)  
+平均法使用block的整體平均扣除常數C，而高斯法則是block內取加權平均後扣除常數C!  
+
+執行結果如下:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv46.png) 
+
 ## 大津臨界值(Otsu Threshold)
+
+
 ## Riddler-Calvard演算法
+
 
 
 # 邊緣偵測
