@@ -14,7 +14,7 @@
 - 以tuple(R,G,B)表達彩色像素數值，每一個維度代表該色彩強度，值在0~255
 
 # 讀取圖檔
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/cv00.png)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv00.png)
 使用cv2.imread()函數來讀取圖檔，其語法為:  
 ```
 cv2.imread(filename [, flag] )
