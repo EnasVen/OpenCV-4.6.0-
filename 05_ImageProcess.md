@@ -75,7 +75,9 @@ K_weight 和 K_height是window的寬和高
 - type可使用的參數為以下:  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv42.png)  
 
-使用簡單臨界值，則選 cv2.THRESH_BINARY
+使用簡單臨界值，則選 cv2.THRESH_BINARY。  
+注意該函數有2個回傳值，第一個retval是演算法得到的閥值，dst則為回傳圖像。  
+
 執行結果如下:
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv44.png)  
 須注意cv2.THRESH_BINARY_INV代表將原本的threshold結果當作mask，也就是原圖黑白互換。  
@@ -85,15 +87,22 @@ K_weight 和 K_height是window的寬和高
 - 根據每個像素的相鄰區域找出最佳二值化閥值。  
 - 使用cv2.adaptiveThreshold(src, maxValue, adaptiveMethod, thresholdType, blockSize, C[, dst]	) ->	dst  
 -  maxValue為像素最大強度值，adaptiveMethod為使用的演算法，thresholdType為二值化的算法，blocksize為選取計算neighbo的範圍。  
+-  blocksize必須為奇數。  
+-  臨界值種類只能是 cv2.THRESH_BINARY 或 cv2.THRESH_BINARY_INV 其中一個。  
 -  adaptiveMethod可使用的參數為以下:  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv47.png)  
 平均法使用block的整體平均扣除常數C，而高斯法則是block內取加權平均後扣除常數C!  
 
 執行結果如下:  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv46.png) 
-
 ## 大津臨界值(Otsu Threshold)
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv48.png)  
+該演算法假設圖像轉灰階後的像素直方圖有兩個peak，該方法主要在尋找分開兩peak的最佳臨界值T。  
+- 使用cv2.threshold(img , thresh , maxval , cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)  
+- thresh的位置可以隨意填值，因為我們已經指定otsu演算法了，所以人工閥值的位置給多少都不會影響結果!  
 
+執行結果如下:
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv49.png)  
 
 ## Riddler-Calvard演算法
 
