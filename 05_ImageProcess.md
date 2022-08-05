@@ -110,8 +110,8 @@ Otsu’s threshold after Gaussian blur: 97.0
 ## Riddler-Calvard演算法
 
 
-
 # 邊緣偵測
+
 ## Sobel
 ## Laplacian
 ## Canny
