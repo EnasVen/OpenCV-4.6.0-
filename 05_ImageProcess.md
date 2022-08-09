@@ -149,15 +149,36 @@ Riddler-Calvard: 165.87138975004711
 - 沿X和Y軸計算Sobel圖像梯度  
 - 套用NMS(Non-Maximum Suppression)，刪除非邊緣的像素，僅保留candidate邊緣細線  
 - 透過threshold確定像素是否為邊緣  
+- 使用cv2.Canny(img , threshold1, threshold2)  
+- 必須提供兩個梯度值，任何梯度大於threshold2的像素都被視為邊緣 ; 而梯度小於threshold1的像素將被視為非邊緣  
+- 介於中間的則根據像素強度來決定是否為邊緣!  
 
 以下為執行結果:  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv56.png)  
 
-
-
-
-
 # 輪廓
+輪廓可解釋為連接具有相同顏色或像素強度的所有連續點之曲線。  
+由於使用二元圖像會得到更佳的準確性，因此尋找輪廓之前會先套用Canny邊緣偵測技術做遇處理。  
+從OpenCV3.2版之後，findContours()函數不會再變更原始圖像了!  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv57.png)  
+
+- 使用cv2.findContours(img , mode , method)尋找輪廓  
+- mode為輪廓的取得模式
+  > cv2.RETR_EXTERNAL為擷取最外面的輪廓  
+  > cv2.RETR_LIST為取得所有輪廓  
+- method為求取輪廓的方法
+  > cv2.CHAIN_APPROX_SIMPLE 只會保留端點  
+  > cv2.CHAIN_APPROX_NONE 則會取得所有座標，比較吃資源  
+- findContours()函數回傳list型別物件!  
+
+
+- 使用cv2.drawContours(img , contours , contourldx  ,color)繪製輪廓  
+- contours參數為上面回傳的list，contourldx代表要繪製第幾個輪廓(給-1就是全部)，color則為輪廓線條顏色  
+
+以下為執行結果:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv58.png)  
+
+
 
 # 侵蝕
 
