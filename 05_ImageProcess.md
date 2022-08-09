@@ -194,3 +194,11 @@ Riddler-Calvard: 165.87138975004711
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv60.png)  
 
 # Opening-Closing
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv61.png)  
+- opening = 先侵蝕再擴張，對於消除背景雜訊很有幫助!  
+- 使用cv2.morphologyEx(img , cv.MORPH_OPEN , kernel)  
+- closing = 先擴張再侵蝕，對於清除物件上的雜訊很有幫助!  
+- 使用cv2.morphologyEx(img , cv.MORPH_CLOSE , kernel)  
+
+以下為執行結果:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv62.png)  
