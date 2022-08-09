@@ -178,10 +178,19 @@ Riddler-Calvard: 165.87138975004711
 以下為執行結果:  
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv58.png)  
 
+# 侵蝕與膨脹
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv59.png)  
+- 縮減前景物件邊界。  
+- 使用kernel(類似CNN的filter)在圖像中滑動，當kernel內所有像素都為1時，原始圖像的像素才會被視為1(255，白色)，否則為0(0，黑色)。  
+- 通常使用侵蝕來消除雜訊，對於分離兩個連接的物件非常有用!  
+- 使用cv2.erode(img , kernel , iterations=1)  
 
+- 與侵蝕相反的操作，用來膨脹物件邊界。  
+- 當kernel內有任何像素為1時，原始圖像的像素就為1(255，白色)，否則為0(0，黑色)。  
+- 對於連接物件的斷裂部分有奇效!  
+- 使用cv2.dilation(img , kernel , iterations=1)  
 
-# 侵蝕
-
-# 膨脹
+以下為執行結果:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv60.png)  
 
 # Opening-Closing
