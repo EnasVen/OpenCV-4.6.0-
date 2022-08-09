@@ -94,7 +94,8 @@ K_weight 和 K_height是window的寬和高
 平均法使用block的整體平均扣除常數C，而高斯法則是block內取加權平均後扣除常數C!  
 
 執行結果如下:  
-![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv46.png) 
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv46.png)  
+
 ## 大津臨界值(Otsu Threshold)
 ![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv48.png)  
 該演算法假設圖像轉灰階後的像素直方圖有兩個peak，該方法主要在尋找分開兩peak的最佳臨界值T。  
@@ -117,11 +118,44 @@ Otsu’s threshold after Gaussian blur: 97.0
 Otsu’s threshold: 165  
 Riddler-Calvard: 165.87138975004711  
 
-# 邊緣偵測
+# 邊緣偵測  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv54.png)  
+用來尋找圖像中像素亮度發生明顯變化的地方。  
 
-## Sobel
+## Sobel  
+- 利用偏微分尋找圖像亮度的梯度近似值。  
+- 使用cv2.Sobel(img , ddepth , dx ,dy)  
+- ddepth為色彩深度，例如:cv2.CV_64F(注意給-1則代表與原圖相同色彩深度!)  
+- dx, dy 則代表要對X或Y方向做幾階偏微分(注意圖像X軸是第2維度，也就是column方向! axis=1)  
+
+以下為執行結果:
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv53.png)  
+
+注意:  
+1) 可使用cv2.addWeighted()來對X,Y方向偏微分結果作加權平均!  
+2) 轉換圖像色彩深度可透過 cv2.convertScaleAbs()函數完成!  
+
 ## Laplacian
+- 利用二階微分運算尋找圖像邊緣  
+- 使用cv2.Laplacian(img , ddepth)  
+
+以下為執行結果:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv52.png)  
+
 ## Canny
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv55.png)  
+- 透過"邊緣檢測計算理論"手法完成  
+- 將圖像模糊以降低雜訊  
+- 沿X和Y軸計算Sobel圖像梯度  
+- 套用NMS(Non-Maximum Suppression)，刪除非邊緣的像素，僅保留candidate邊緣細線  
+- 透過threshold確定像素是否為邊緣  
+
+以下為執行結果:  
+![Image](https://github.com/EnasVen/OpenCV-4.6.0-/blob/main/pics/cv56.png)  
+
+
+
+
 
 # 輪廓
 
